@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Typography */
+  --fontFamily: "Inter", sans-serif;
+  --fontSize-small: 0.875rem;
+  --fontSize-medium: 1rem;
+  --fontSize-large: 1.25rem;
+  --fontSize-xl: 1.5rem;
+  --lineHeight-medium: 24px;
+  --lineHeight-big: 30px;
+  --letterSpacing-small: -1px;
+  --letterSpacing-medium: -0.5px;
+  --letterSpacing-normal: -0.85px;
+  --fontWeight-medium: 500;
+  --fontWeight-semibold: 600;
+  --fontWeight-Bold: 700;
+
+  /* color */
+  --bgColor: #f8f8f8;
+  --bodyTextColor: #666666;
+  --headingTextColor: #111111;
+  --primaryButtonColor: #000000;
+  --onPrimaryButtonColor: #ffffff;
+  --borderColor: #e8e8e8;
+
+  /* Spacing */
+  --space1: 0.25rem;
+  --space2: 0.5rem;
+  --space3: 1rem;
+  --space4: 1.5rem;
+  --space5: 2rem;
+
+  /* Corner radius */
+  --borderRadius1: 0.25rem;
+  --borderRadius2: 0.5rem;
+  --borderRadius3: 1rem;
+  --borderRadius4: 1.5rem;
+
+  /* Clamp Variables */
+  --minimumSize: 1rem;
+  --maximunSize: 2rem;
+  --clampVariable: clamp(var(--minimumSize), 1rem + 1vw, var(--maximunSize));
+
+  /* Shadow Variables */
+  --offsetX: 0;
+  --offsetY: 4px;
+  --dowBlur: 32px;
+  --dowColor: hsla(0, 0%, 0%, 0.5);
+  --dowSpread: 2px;
+
+  /* dark theme properties */
+  [data-theme="dark"] {
+    --bgColor: #161616;
+    --bodyTextColor: #8b8a8a;
+    --headingTextColor: #e0e0e0;
+    --primaryButtonColor: #ffffff;
+    --onPrimaryButtonColor: #000000;
+    --borderColor: #e8e8e8;
+    --dowColor: hsla(0, 0%, 55%, 0.5);
+  }
+}
+
+.heading {
+  font-family: var(--fontFamily);
+  font-size: var(--clampVariable);
+  letter-spacing: var(--letterSpacing-small);
+  line-height: var(--lineHeight-big);
+  color: var(--headingTextColor);
+}
+
+.paragraph {
+  font-family: var(--fontFamily);
+  font-size: var(--fontSize-medium);
+  font-weight: var(--fontWeight-medium);
+  letter-spacing: var(--letterSpacing-small);
+  line-height: var(--lineHeight-medium);
+  color: var(--bodyTextColor);
+}
+
+button {
+  background-color: var(--primaryButtonColor, black);
+  color: var(--onPrimaryButtonColor, white);
+  padding: var(--space3) var(--space4);
+  font-family: var(--fontFamily);
+  font-size: var(--fontSize-medium);
+  font-weight: var(--fontWeight-medium);
+  letter-spacing: var(--letterSpacing-small);
+  border-radius: var(--borderRadius2);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--offsetX) var(--offsetY) var(--dowBlur) var(--dowColor);
+}
+
+.first-container {
+  background-color: var(--bgColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  padding: var(--space4);
+  row-gap: var(--space4);
+}
+
+/* Declaring the dark mode properties using media query */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bgColor: #161616;
+    --bodyTextColor: #8a8a8a;
+    --headingTextColor: #e0e0e0;
+    --primaryButtonColor: #ffffff;
+    --onPrimaryButtonColor: #000000;
+    --borderColor: #e8e8e8;
+    --dowColor: hsla(0, 0%, 55%, 0.5);
+  }
+}
