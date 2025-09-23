@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+/* Declaring CSS variables */
 :root {
   /* Typography */
   --fontFamily: "Inter", sans-serif;
